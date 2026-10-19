@@ -77,3 +77,27 @@ article li{margin-bottom:.4rem}
 footer.site{border-top:1px solid var(--rule);padding:2.5rem 0 3rem;color:var(--ink-2);font-size:.92rem}
 footer.site .wrap{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Colour layer: soft tints, one accent per case study */
+:root{--sage:#DCE6D8;--sky:#DAE6EE;--butter:#F5E8C4;--rose:#F1DAD3;--c:var(--accent)}
+:root[data-theme="dark"]{--sage:#1F2A22;--sky:#1B2630;--butter:#2B2615;--rose:#2E1F1B}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sage:#1F2A22;--sky:#1B2630;--butter:#2B2615;--rose:#2E1F1B}}
+.hero-band{background:linear-gradient(180deg,var(--butter) 0%,var(--paper) 100%)}
+.hero-band .hero{padding-bottom:3.5rem}
+section.tint-sage{background:var(--sage)}
+section.tint-sky{background:var(--sky)}
+section.tint-butter{background:var(--butter)}
+.work-item{border-left:4px solid transparent;padding-left:1rem;transition:background .2s,border-color .2s}
+.work-item:hover{background:color-mix(in srgb,var(--c) 9%,transparent);border-left-color:var(--c)}
+.work-item .n{color:var(--c);font-weight:600}
+.work-item .tag{color:var(--c)}
+.work-item:hover h3{color:var(--c)}
+.grid.four>div{background:color-mix(in srgb,var(--paper) 70%,transparent);padding:1.25rem 1.25rem .5rem;border-top:3px solid var(--accent)}
+.grid.four>div:nth-child(2){border-top-color:#2F6B8E}.grid.four>div:nth-child(3){border-top-color:#B7791F}.grid.four>div:nth-child(4){border-top-color:#7B5A9A}
+main[style*="--c"] .principle{border-left-color:var(--c);background:color-mix(in srgb,var(--c) 8%,var(--paper));padding:1.25rem 1.5rem}
+main[style*="--c"] .metric .num{color:var(--c)}
+main[style*="--c"] .eyebrow{color:var(--c)}
+main[style*="--c"] .callout{background:color-mix(in srgb,var(--c) 9%,var(--paper));border-left:3px solid var(--c)}
+main[style*="--c"] article h2{border-top:3px solid color-mix(in srgb,var(--c) 35%,transparent);padding-top:1rem}
+main[style*="--c"] .btn:hover{background:var(--c);border-color:var(--c)}
+.shot{border-radius:6px}
