@@ -19,6 +19,29 @@
 <h2>Decisions</h2>
 <h3>1. Thin agents, shared standards</h3>
 <p>The central architectural decision. Instead of each agent carrying its own copy of the style guide and procedures, the standards live once, in a shared folder, and every agent reads them. A change to the house style is made in <b>one file</b>, and all eight agents inherit it instantly — no drift, no eight-way maintenance. It also keeps the system honest: an agent never invents a rule; if it can't find one in the standards, it says so.</p>
+<figure><svg id="d1" viewBox="0 0 900 440" role="img" aria-label="Shared standards and docs feeding eight thin agents" width="100%" style="height:auto;max-width:840px;display:block;margin-inline:auto">
+<defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--ink-2)"/></marker></defs>
+<style>#d1 text{font-family:var(--sans,sans-serif)}#d1 .b{fill:var(--paper-2);stroke:var(--rule);stroke-width:1.5}#d1 .src{fill:color-mix(in srgb,var(--c) 10%,var(--paper-2));stroke:var(--c);stroke-width:1.5}#d1 .t{fill:var(--ink);font-size:12.5px}#d1 .ti{fill:var(--ink);font-size:14px;font-weight:600}#d1 .cap{fill:var(--ink-2);font-size:11px}#d1 .e{fill:none;stroke:var(--ink-2);stroke-width:1.5}#d1 .acc{fill:none;stroke:var(--c);stroke-width:2.5}</style>
+<rect class="src" x="40" y="24" width="480" height="112" rx="8"/><text class="ti" x="58" y="48">standards/</text><text class="cap" x="152" y="48">single source of truth</text>
+<rect class="b" x="58" y="68" width="140" height="44" rx="6"/><text class="t" x="128" y="95" text-anchor="middle">Style guide</text>
+<rect class="b" x="212" y="68" width="150" height="44" rx="6"/><text class="t" x="287" y="88" text-anchor="middle">Behavioural</text><text class="t" x="287" y="104" text-anchor="middle">principles</text>
+<rect class="b" x="376" y="68" width="128" height="44" rx="6"/><text class="t" x="440" y="88" text-anchor="middle">Email</text><text class="t" x="440" y="104" text-anchor="middle">templates</text>
+<rect class="src" x="548" y="24" width="312" height="112" rx="8"/><text class="ti" x="566" y="48">docs/</text><text class="cap" x="612" y="48">procedures</text>
+<rect class="b" x="566" y="68" width="130" height="44" rx="6"/><text class="t" x="631" y="95" text-anchor="middle">Drupal</text>
+<rect class="b" x="710" y="68" width="132" height="44" rx="6"/><text class="t" x="776" y="95" text-anchor="middle">SharePoint</text>
+<path class="e" d="M280,136 L280,186"/><path class="e" d="M704,136 L704,186"/>
+<path class="acc" d="M100,186 L800,186"/><text class="cap" x="450" y="178" text-anchor="middle">every agent reads the same standards</text>
+<path class="e" d="M180,186 L180,250" marker-end="url(#ar1)"/><path class="e" d="M380,186 L380,250" marker-end="url(#ar1)"/><path class="e" d="M560,186 L560,250" marker-end="url(#ar1)"/><path class="e" d="M740,186 L740,250" marker-end="url(#ar1)"/>
+<rect class="b" x="40" y="252" width="820" height="166" rx="8"/><text class="ti" x="58" y="276">agents/</text><text class="cap" x="120" y="276">thin, specialised</text>
+<rect class="b" x="58" y="294" width="185" height="46" rx="6"/><text class="t" x="150" y="322" text-anchor="middle">operations</text>
+<rect class="b" x="255" y="294" width="185" height="46" rx="6"/><text class="t" x="347" y="322" text-anchor="middle">service design</text>
+<rect class="b" x="452" y="294" width="185" height="46" rx="6"/><text class="t" x="544" y="322" text-anchor="middle">research</text>
+<rect class="b" x="649" y="294" width="185" height="46" rx="6"/><text class="t" x="741" y="322" text-anchor="middle">user testing</text>
+<rect class="b" x="58" y="352" width="185" height="46" rx="6"/><text class="t" x="150" y="380" text-anchor="middle">conversation design</text>
+<rect class="b" x="255" y="352" width="185" height="46" rx="6"/><text class="t" x="347" y="380" text-anchor="middle">form builder</text>
+<rect class="b" x="452" y="352" width="185" height="46" rx="6"/><text class="t" x="544" y="380" text-anchor="middle">content design</text>
+<rect class="b" x="649" y="352" width="185" height="46" rx="6"/><text class="t" x="741" y="380" text-anchor="middle">check your answers</text>
+</svg><figcaption>Thin agents, shared standards: the house style, behavioural principles and procedures live once; every agent reads them, so a rule is updated in one place and no agent can invent one.</figcaption></figure>
 <figure><img class="shot" src="assets/cdos-repo.png" alt="The Content Design OS open in VS Code, showing agents, standards, docs, skills and examples folders" loading="lazy" width="900" height="560"><figcaption>The system in VS Code: <code>agents/</code> reading from <code>standards/</code> and <code>docs/</code>, with the <code>skills/</code> audit engine and a local <code>examples/</code> library — one version-controlled home.</figcaption></figure>
 <h3>2. A behavioural-science layer</h3>
 <p>Most content tooling stops at "is it plain English?" I wanted the OS to ask a harder question: does this work with how people actually think? The shared standards include a behavioural-principles file — cognitive load, framing and defaults, friction (where to remove it and where to add it deliberately), the Behavioural Insights Team's EAST framework, trust and reassurance for high-stakes services, error psychology, and attention and salience. Every agent applies it: operations to pages, service design to diagnose <i>why</i> a journey fails, conversation design to dialogue. This is the distinctive layer — it turns the system from a style-checker into a design partner.</p>
@@ -29,8 +52,55 @@
 <h3>5. A human gate, enforced by the architecture</h3>
 <p>Reports land in a local staging folder the person reviews. Nothing reaches a notification channel until they deliberately move an approved report into a watched folder. It would have been technically possible to have the AI post straight to Teams — I chose not to, because that would collapse the human gate I'd deliberately designed. Power Automate was the right fit precisely because it's <i>dumber</i>: it reacts to a file the human moves, sending through the council's own authenticated channels. The automation triggers on the person's decision, not the AI's judgement.</p>
 <figure><img class="shot" src="assets/cdos-flow.png" alt="The Power Automate cloud flow: a file created in the watched folder triggers get file content, then send an email" loading="lazy" width="900" height="420"><figcaption>The notification flow fires only when a human moves an approved report into the watched folder, then sends through the council's own OneDrive and Outlook connections. Built, tested and confirmed working end to end.</figcaption></figure>
+<h2>The content-audit pipeline</h2>
+<p>The most involved piece. It takes a page or a list, runs mechanical checks, and produces a reviewable report — with a deliberate human gate before anything is sent. The two points in the accent colour are the governance controls: the safety gate that keeps the script on public council pages, and the human gate that no report passes without a person.</p>
+<figure><svg id="d2" viewBox="0 0 900 810" role="img" aria-label="Flowchart of the content-audit pipeline from input to a human-gated send" width="100%" style="height:auto;max-width:560px;display:block;margin-inline:auto">
+<defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--ink-2)"/></marker></defs>
+<style>#d2 text{font-family:var(--sans,sans-serif)}#d2 .b{fill:var(--paper-2);stroke:var(--rule);stroke-width:1.5}#d2 .acc{fill:color-mix(in srgb,var(--c) 14%,var(--paper-2));stroke:var(--c);stroke-width:2}#d2 .mut{fill:color-mix(in srgb,var(--ink-2) 10%,var(--paper-2));stroke:var(--rule);stroke-width:1.5}#d2 .dia{fill:var(--paper-2);stroke:var(--rule);stroke-width:1.5}#d2 .diaA{fill:color-mix(in srgb,var(--c) 12%,var(--paper-2));stroke:var(--c);stroke-width:2}#d2 .t{fill:var(--ink);font-size:12.5px}#d2 .ti{fill:var(--ink);font-size:13px;font-weight:600}#d2 .cap{fill:var(--ink-2);font-size:11px}#d2 .e{fill:none;stroke:var(--ink-2);stroke-width:1.5}#d2 .lbl{fill:var(--ink-2);font-size:11px}</style>
+<rect class="b" x="300" y="24" width="300" height="50" rx="6"/><text class="t" x="450" y="54" text-anchor="middle">Input: URL · Excel · draft · screenshot</text>
+<path class="e" d="M450,74 L450,94" marker-end="url(#ar2)"/>
+<polygon class="dia" points="450,96 566,140 450,184 334,140"/><text class="t" x="450" y="136" text-anchor="middle">Quick check or</text><text class="t" x="450" y="152" text-anchor="middle">full audit?</text>
+<rect class="b" x="36" y="104" width="258" height="74" rx="6"/><text class="t" x="165" y="128" text-anchor="middle">Quick check —</text><text class="cap" x="165" y="146" text-anchor="middle">agent reviews in chat</text><text class="cap" x="165" y="162" text-anchor="middle">style · a11y · plain English</text>
+<path class="e" d="M334,140 L298,140" marker-end="url(#ar2)"/><text class="lbl" x="316" y="132" text-anchor="middle">Quick</text>
+<path class="e" d="M450,184 L450,214" marker-end="url(#ar2)"/><text class="lbl" x="470" y="204" text-anchor="start">Full audit</text>
+<rect class="b" x="360" y="214" width="180" height="46" rx="6"/><text class="t" x="450" y="242" text-anchor="middle">Python engine</text>
+<path class="e" d="M450,260 L450,286" marker-end="url(#ar2)"/>
+<rect class="acc" x="315" y="286" width="270" height="54" rx="6"/><text class="ti" x="450" y="309" text-anchor="middle">Safety gate</text><text class="cap" x="450" y="327" text-anchor="middle">public royalgreenwich.gov.uk only</text>
+<path class="e" d="M450,340 L450,366" marker-end="url(#ar2)"/>
+<rect class="b" x="300" y="366" width="300" height="64" rx="6"/><text class="ti" x="450" y="391" text-anchor="middle">Mechanical checks</text><text class="cap" x="450" y="411" text-anchor="middle">links · dates · duplicates · accessibility</text>
+<path class="e" d="M450,430 L450,456" marker-end="url(#ar2)"/>
+<rect class="b" x="330" y="456" width="240" height="52" rx="6"/><text class="t" x="450" y="478" text-anchor="middle">Report + summary →</text><text class="cap" x="450" y="495" text-anchor="middle">local staging folder</text>
+<path class="e" d="M450,508 L450,536" marker-end="url(#ar2)"/>
+<polygon class="diaA" points="450,538 582,588 450,638 318,588"/><text class="ti" x="450" y="585" text-anchor="middle">Human</text><text class="ti" x="450" y="603" text-anchor="middle">reviews</text>
+<path class="e" d="M318,588 L254,588" marker-end="url(#ar2)"/><text class="lbl" x="312" y="578" text-anchor="end">Not good enough</text>
+<rect class="mut" x="40" y="560" width="214" height="56" rx="6"/><text class="t" x="147" y="584" text-anchor="middle">Stop —</text><text class="cap" x="147" y="601" text-anchor="middle">nothing sent</text>
+<path class="e" d="M450,638 L450,664" marker-end="url(#ar2)"/><text class="lbl" x="470" y="656" text-anchor="start">Approved</text>
+<rect class="b" x="300" y="664" width="300" height="52" rx="6"/><text class="t" x="450" y="686" text-anchor="middle">Move approved report</text><text class="cap" x="450" y="703" text-anchor="middle">to watched folder</text>
+<path class="e" d="M450,716 L450,742" marker-end="url(#ar2)"/>
+<rect class="acc" x="300" y="742" width="300" height="56" rx="6"/><text class="ti" x="450" y="766" text-anchor="middle">Power Automate</text><text class="cap" x="450" y="784" text-anchor="middle">formatted email · Teams card</text>
+</svg><figcaption>The content-audit pipeline. The safety gate and the human gate (in the accent colour) are the governance points: the script only touches public council pages, and nothing reaches a channel until a person moves an approved report into the watched folder.</figcaption></figure>
 <h2>How the agents work together</h2>
 <p>The OS isn't eight isolated prompts — it's a team with a flow of work between them. Research feeds service design, which maps journeys and commissions work; operations rewrites content and the form-builder builds the form; the check-your-answers generator produces the summary page; user testing validates the change and feeds back to service design; conversation design handles the assistant; content design handles drafting and critique. Each follows the same thin-agent pattern, reading the same shared standards.</p>
+<figure><svg id="d3" viewBox="0 0 900 400" role="img" aria-label="Graph of how the eight agents pass work between each other" width="100%" style="height:auto;max-width:840px;display:block;margin-inline:auto">
+<defs><marker id="ar3" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--ink-2)"/></marker></defs>
+<style>#d3 text{font-family:var(--sans,sans-serif)}#d3 .b{fill:var(--paper-2);stroke:var(--rule);stroke-width:1.5}#d3 .hub{fill:color-mix(in srgb,var(--c) 14%,var(--paper-2));stroke:var(--c);stroke-width:2}#d3 .t{fill:var(--ink);font-size:12.5px}#d3 .ti{fill:var(--ink);font-size:13.5px;font-weight:600}#d3 .cap{fill:var(--ink-2);font-size:11px}#d3 .e{fill:none;stroke:var(--ink-2);stroke-width:1.5}#d3 .ed{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:5 4}#d3 .lbl{fill:var(--ink-2);font-size:11px}</style>
+<path class="e" d="M184,216 L246,216" marker-end="url(#ar3)"/>
+<path class="e" d="M426,202 L498,102" marker-end="url(#ar3)"/>
+<path class="e" d="M426,220 L498,216" marker-end="url(#ar3)"/>
+<path class="e" d="M426,244 L498,328" marker-end="url(#ar3)"/>
+<path class="e" d="M660,96 L710,96" marker-end="url(#ar3)"/>
+<path class="e" d="M660,216 L710,216" marker-end="url(#ar3)"/>
+<path class="ed" d="M770,70 L770,34 L338,34 L338,172" marker-end="url(#ar3)"/><text class="lbl" x="554" y="28" text-anchor="middle">validates → feeds back</text>
+<path class="ed" d="M250,346 L205,346 L205,112 L498,112" marker-end="url(#ar3)"/>
+<rect class="b" x="24" y="190" width="160" height="52" rx="6"/><text class="t" x="104" y="212" text-anchor="middle">research</text><text class="cap" x="104" y="228" text-anchor="middle">what users need</text>
+<rect class="hub" x="250" y="176" width="176" height="92" rx="7"/><text class="ti" x="338" y="212" text-anchor="middle">service design</text><text class="cap" x="338" y="230" text-anchor="middle">maps journeys,</text><text class="cap" x="338" y="245" text-anchor="middle">finds gaps</text>
+<rect class="b" x="500" y="70" width="160" height="52" rx="6"/><text class="t" x="580" y="92" text-anchor="middle">operations</text><text class="cap" x="580" y="108" text-anchor="middle">rewrites content</text>
+<rect class="b" x="500" y="190" width="160" height="52" rx="6"/><text class="t" x="580" y="212" text-anchor="middle">form-builder</text><text class="cap" x="580" y="228" text-anchor="middle">builds the form</text>
+<rect class="b" x="500" y="310" width="176" height="52" rx="6"/><text class="t" x="588" y="332" text-anchor="middle">conversation design</text><text class="cap" x="588" y="348" text-anchor="middle">designs assistant</text>
+<rect class="b" x="712" y="70" width="166" height="52" rx="6"/><text class="t" x="795" y="92" text-anchor="middle">user-testing</text><text class="cap" x="795" y="108" text-anchor="middle">validates</text>
+<rect class="b" x="712" y="190" width="176" height="52" rx="6"/><text class="t" x="800" y="212" text-anchor="middle">check your answers</text><text class="cap" x="800" y="228" text-anchor="middle">summary page</text>
+<rect class="b" x="250" y="320" width="176" height="52" rx="6"/><text class="t" x="338" y="342" text-anchor="middle">content design</text><text class="cap" x="338" y="358" text-anchor="middle">drafting &amp; critique</text>
+</svg><figcaption>How the agents work together. Service design is the hub; solid arrows show the flow of work, dashed arrows the validation loop back from user testing and content design's input into operations.</figcaption></figure>
 <h2>Iteration</h2>
 <p><b>Rebuilding from the authoritative source.</b> My first draft of the style-guide standard was reconstructed from an existing agent prompt. When I got hold of the official April 2024 style guide, I rebuilt the standard from it — the full A–Z, the plain-English checklist, the alternatives table — so the system rests on the real source, not a paraphrase. <b>Redacting to roles, not names.</b> The procedure docs originally named specific colleagues; heading toward a shareable, eventually council-owned repo, I redacted every name to a role, so the guidance stays actionable and can't go stale or expose individuals. <b>A data-protection line on example forms.</b> A sanitisation scan before committing found that some live form exports contained third parties' personal email addresses, used for routing. Even in a private repo, that's third-party personal data leaving council-controlled systems, so I excluded all 27 example forms from version control entirely — they stay local and usable by the agents, but never touch GitHub.</p>
 <h2>Results</h2>
