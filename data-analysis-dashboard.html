@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feedback dashboard · Chika Nwakanma</title><meta name="description" content="Interactive dashboard of nine months of website feedback for a London borough — not-helpful rate by section, reasons, and change over time. Aggregated and anonymised.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css">
+<style>
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}
+  @media(max-width:640px){.tiles{grid-template-columns:1fr}}
+  .tile{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:18px 20px}
+  .tile .n{font:500 2.3rem/1 var(--serif);color:var(--c)}
+  .tile p{margin:.45rem 0 0;color:var(--ink-2);font-size:.9rem}
+  .panel{background:var(--paper-2);border:1px solid var(--rule);border-radius:8px;padding:20px 22px;margin:22px 0}
+  .panel h2{font-size:1.15rem;margin:0 0 4px}
+  .panel .sub{color:var(--ink-2);font-size:.87rem;margin:0 0 16px}
+  .bar-row{display:grid;grid-template-columns:minmax(120px,210px) 1fr 44px;align-items:center;gap:10px;margin:5px 0;font-size:.9rem}
+  .bar-row .lbl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bar-track{background:color-mix(in srgb,var(--ink-2) 13%,transparent);border-radius:3px;height:20px}
+  .bar-fill{height:100%;border-radius:3px;transition:width .5s ease}
+  .bar-val{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+  .legend{display:flex;flex-wrap:wrap;gap:18px;font-size:.84rem;color:var(--ink-2);margin-top:12px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:12px;height:12px;border-radius:2px;display:inline-block}
+  #tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--paper);font-size:.8rem;padding:5px 9px;border-radius:5px;opacity:0;transition:opacity .1s;z-index:30;white-space:nowrap}
+  .ltab{display:inline-flex;gap:0;border:1px solid var(--rule);border-radius:6px;overflow:hidden;font-size:.82rem;margin-bottom:8px}
+  .ltab button{background:transparent;color:var(--ink-2);border:none;padding:6px 12px;cursor:pointer}
+  .ltab button[aria-pressed=true]{background:var(--c);color:#fff}
+</style></head><body>
+<a class="skip" href="#main">Skip to content</a><div class="wrap"><header class="site"><a class="brand" href="index.html">Chika Nwakanma</a>
+<nav aria-label="Main"><ul><li><a href="index.html#work" aria-current=page>Work</a></li><li><a href="index.html#approach">Approach</a></li><li><a href="index.html#about">About</a></li><li><a href="index.html#contact">Contact</a></li></ul></nav></header></div>
+<main id="main" style="--c:#4A4E8C"><div class="wrap case-hero"><p class="eyebrow">Interactive dashboard · from case study 08</p><h1>Website feedback — what residents told us</h1><p class="lede">Nine months of "Was this page helpful?" feedback for a London borough, Jan–Sep 2026, produced by the data-analysis agent. Aggregated and anonymised: section-level rates only, no page names and no resident comments. Hover any bar or point for detail.</p></div>
+<div class="wrap" style="max-width:860px;margin-inline:auto">
+
+<div class="tiles">
+  <div class="tile"><div class="n" id="t1">–</div><p>responses analysed (every page, Jan–Sep)</p></div>
+  <div class="tile"><div class="n" id="t2">–</div><p>said a page was <b>not helpful</b> (30%)</p></div>
+  <div class="tile"><div class="n" id="t3">–</div><p>top reason: <b>"I cannot find what I need"</b></p></div>
+</div>
+
+<div class="panel">
+  <h2>Not-helpful rate by section</h2>
+  <p class="sub">Sections with 200+ responses. Bars at or above 40% are shown in red — that's where residents struggle most.</p>
+  <div id="sections"></div>
+</div>
+
+<div class="panel">
+  <h2>Why people said a page wasn't helpful</h2>
+  <p class="sub">The reason chosen on the form, for every not-helpful response.</p>
+  <div id="reasons"></div>
+</div>
+
+<div class="panel">
+  <h2>Change over time</h2>
+  <p class="sub">Not-helpful rate by month. Recycling runs well above the whole-site average and spikes in spring and summer — the missed-collection seasons.</p>
+  <div class="ltab"><button id="bothBtn" aria-pressed="true">Both</button><button id="siteBtn" aria-pressed="false">Whole site</button><button id="recBtn" aria-pressed="false">Recycling</button></div>
+  <div id="line"></div>
+  <div class="legend"><span><span class="sw" style="background:#C4122F"></span> Recycling</span><span><span class="sw" style="background:var(--c)"></span> Whole site</span></div>
+</div>
+
+<p class="note" style="max-width:none">Anonymised and aggregated. Figures are real and come from the structured ratings; the borough, specific pages and comments are not shown. Only residents who said a page was <i>not</i> helpful are represented, so this maps what isn't working, not overall satisfaction.</p>
+<div class="pager"><a href="data-analysis-agent.html">&larr; Read the case study</a><a href="index.html#work">All work &rarr;</a></div>
+</div></main>
+<div id="tip"></div>
+<footer class="site"><div class="wrap"><span>Chika Nwakanma · AI content designer and conversational designer</span><span><a href="mailto:YOUR-EMAIL@example.com">Email</a> · <a href="https://www.linkedin.com/in/YOUR-HANDLE">LinkedIn</a> · <a href="https://github.com/afroxyz">GitHub</a></span></div></footer>
+<script>
+"use strict";
+const DATA = {
+  total:18467, not_helpful:5570, not_helpful_pct:30,
+  reasons:{"I cannot find what I need":3742,"Other":911,"Something is not working on the page":616,"It is hard to understand":301},
+  by_section:[
+    {section:"Contact us",n:1059,pct:54},{section:"Page not found / access denied",n:281,pct:52},
+    {section:"My account",n:700,pct:46},{section:"Recycling and rubbish",n:2295,pct:45},
+    {section:"Home",n:254,pct:41},{section:"Parking, transport, streets",n:2382,pct:41},
+    {section:"Planning & building control",n:446,pct:34},{section:"Council tax",n:1283,pct:33},
+    {section:"Council & elections",n:1062,pct:29},{section:"Adult care and health",n:214,pct:29},
+    {section:"Parks, libraries & leisure",n:249,pct:24},{section:"Housing",n:2251,pct:22},
+    {section:"Births, deaths, marriages & citizenship",n:483,pct:21},{section:"Other",n:1777,pct:20},
+    {section:"News",n:941,pct:17},{section:"Children, young people, families",n:299,pct:16},
+    {section:"Schools and education",n:549,pct:16},{section:"Jobs, training, volunteering",n:270,pct:12},
+    {section:"Cookies",n:1256,pct:8}
+  ],
+  months:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"],
+  whole:[27,27,34,29,29,33,33,31,29],
+  recycling:[36,41,54,38,37,57,54,40,44]
+};
+const fmt = n => n.toLocaleString("en-GB");
+const tip = document.getElementById("tip");
+function showTip(e,html){ tip.innerHTML=html; tip.style.opacity=1; moveTip(e); }
+function moveTip(e){ tip.style.left=(e.clientX+12)+"px"; tip.style.top=(e.clientY-10)+"px"; }
+function hideTip(){ tip.style.opacity=0; }
+
+document.getElementById("t1").textContent=fmt(DATA.total);
+document.getElementById("t2").textContent=fmt(DATA.not_helpful);
+document.getElementById("t3").textContent=fmt(DATA.reasons["I cannot find what I need"]);
+
+// section bars
+function bars(elId, rows, max, colourFn){
+  const el=document.getElementById(elId);
+  el.innerHTML = rows.map((r,i)=>`
+    <div class="bar-row">
+      <span class="lbl" title="${r.label}">${r.label}</span>
+      <div class="bar-track"><div class="bar-fill" data-i="${i}" style="width:0%;background:${colourFn(r)}"></div></div>
+      <span class="bar-val">${r.valLabel}</span>
+    </div>`).join("");
+  requestAnimationFrame(()=>el.querySelectorAll(".bar-fill").forEach((f,i)=>{ f.style.width=(rows[i].val/max*100)+"%"; }));
+  el.querySelectorAll(".bar-fill").forEach((f,i)=>{
+    f.onmousemove=e=>showTip(e,rows[i].tip); f.onmouseleave=hideTip;
+  });
+}
+bars("sections",
+  DATA.by_section.map(s=>({label:s.section,val:s.pct,valLabel:s.pct+"%",
+    tip:`<b>${s.section}</b><br>${s.pct}% not helpful · ${fmt(s.n)} responses`})),
+  60, r=> r.val>=40 ? "#C4122F" : "color-mix(in srgb, var(--ink-2) 55%, transparent)");
+
+const rtotal=Object.values(DATA.reasons).reduce((a,b)=>a+b,0);
+bars("reasons",
+  Object.entries(DATA.reasons).map(([k,v])=>({label:k,val:v,valLabel:fmt(v),
+    tip:`<b>${k}</b><br>${fmt(v)} · ${Math.round(v/rtotal*100)}% of reasons given`})),
+  DATA.reasons["I cannot find what I need"], ()=> "var(--c)");
+
+// line chart
+let show={site:true,rec:true};
+function line(){
+  const W=820,H=260,pl=38,pr=14,pt=16,pb=28, maxY=60;
+  const xs=i=> pl + i*((W-pl-pr)/(DATA.months.length-1));
+  const ys=v=> pt + (1-v/maxY)*(H-pt-pb);
+  const path=arr=> arr.map((v,i)=>(i?"L":"M")+xs(i).toFixed(1)+","+ys(v).toFixed(1)).join(" ");
+  const grid=[0,20,40,60].map(v=>`<line x1="${pl}" y1="${ys(v)}" x2="${W-pr}" y2="${ys(v)}" stroke="var(--rule)" stroke-width="1"/><text x="${pl-8}" y="${ys(v)+4}" text-anchor="end" font-size="11" fill="var(--ink-2)">${v}%</text>`).join("");
+  const xlab=DATA.months.map((m,i)=>`<text x="${xs(i)}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--ink-2)">${m}</text>`).join("");
+  function dots(arr,colour,name){ return arr.map((v,i)=>`<circle cx="${xs(i).toFixed(1)}" cy="${ys(v).toFixed(1)}" r="4" fill="${colour}" data-v="${v}" data-m="${DATA.months[i]}" data-name="${name}" class="dot"/>`).join(""); }
+  let svg=`<svg viewBox="0 0 ${W} ${H}" width="100%" style="height:auto" font-family="var(--sans)">${grid}${xlab}`;
+  if(show.rec) svg+=`<path d="${path(DATA.recycling)}" fill="none" stroke="#C4122F" stroke-width="2.5"/>`+dots(DATA.recycling,"#C4122F","Recycling");
+  if(show.site) svg+=`<path d="${path(DATA.whole)}" fill="none" stroke="var(--c)" stroke-width="2.5"/>`+dots(DATA.whole,"var(--c)","Whole site");
+  svg+=`</svg>`;
+  document.getElementById("line").innerHTML=svg;
+  document.querySelectorAll(".dot").forEach(d=>{
+    d.onmousemove=e=>showTip(e,`<b>${d.dataset.name}</b><br>${d.dataset.m}: ${d.dataset.v}% not helpful`);
+    d.onmouseleave=hideTip;
+  });
+}
+function setTab(mode){
+  show = mode==="both"?{site:true,rec:true}: mode==="site"?{site:true,rec:false}:{site:false,rec:true};
+  bothBtn.setAttribute("aria-pressed",mode==="both"); siteBtn.setAttribute("aria-pressed",mode==="site"); recBtn.setAttribute("aria-pressed",mode==="rec");
+  line();
+}
+bothBtn.onclick=()=>setTab("both"); siteBtn.onclick=()=>setTab("site"); recBtn.onclick=()=>setTab("rec");
+line();
+window.addEventListener("scroll",hideTip,{passive:true});
+</script>
+</body></html>
