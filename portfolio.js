@@ -2,6 +2,9 @@
   'use strict';
   const $ = (s, p = document) => p.querySelector(s);
   const $$ = (s, p = document) => [...p.querySelectorAll(s)];
+  // Preserve incoming links from the previous homepage grouping.
+  const legacyDisciplines = { '#content-design': 'content-design.html', '#form-design': 'form-design.html', '#ai-content-design': 'ai-content-design.html', '#conversational-design': 'conversational-design.html' };
+  if (document.body.classList.contains('home-page') && legacyDisciplines[location.hash]) location.replace(legacyDisciplines[location.hash]);
   const theme = $('.theme-toggle');
   function setTheme(value) {
     document.documentElement.dataset.theme = value;

@@ -12,3 +12,48 @@ body{font-size:1rem;line-height:1.65}button,input{font:inherit}button{cursor:poi
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.project-link:hover .image-mat img,.btn:hover,.category-tile:hover{transform:none}}
 @media print{.header-shell,.back-top,.case-toc,.reading-progress,.image-enlarge:after,.project-controls,.theme-toggle,.menu-toggle,.video-frame{display:none!important}:root{--paper:#fff;--ink:#000;--ink-2:#333;--rule:#ccc}.case-page article{width:100%!important;max-width:none!important}a{text-decoration:underline}.wrap{width:100%}.project-cover{break-inside:avoid}}
 @media(max-width:360px){.hero-editorial h1{font-size:2.9rem}.menu-toggle{white-space:nowrap;padding:.3rem .5rem}.brand{font-size:.76rem}.hero-intro{font-size:.94rem}.section-heading h2{font-size:2.2rem}.category-tile>h3{font-size:1.05rem}.category-tile>p{font-size:.61rem}.contact-section h2{font-size:2.45rem}}
+
+/* Work → discipline → project: a page for each level of the portfolio. */
+nav a.is-current{color:var(--accent)}
+.breadcrumbs{margin:0 0 3rem;color:var(--ink-2);font-size:.72rem}
+.breadcrumbs ol{display:flex;flex-wrap:wrap;gap:.5rem 0;list-style:none;margin:0;padding:0;line-height:1.6}
+.breadcrumbs li{display:flex;align-items:baseline;max-width:100%;overflow-wrap:anywhere}
+.breadcrumbs li+li:before{content:' / ';margin-inline:.65rem;color:var(--rule)}
+.breadcrumbs a{text-decoration:none;font-size:inherit;color:var(--ink-2)}
+.breadcrumbs a:hover{text-decoration:underline;color:var(--accent)}
+.breadcrumbs [aria-current]{color:var(--ink)}
+.directory-intro,.discipline-intro{padding-top:2.5rem}
+.directory-intro h1,.discipline-intro h1{font-size:clamp(3rem,6.5vw,5.8rem);max-width:20ch;margin:1.2rem 0 1.7rem}
+.directory-intro h1 em{color:var(--accent)}
+.directory-summary{font-size:1.12rem;line-height:1.7;color:var(--ink-2);max-width:57ch;margin-bottom:0}
+.work-directory{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3.5rem}
+.work-category-tile{min-height:330px;padding:2rem;transition:transform .25s,box-shadow .25s}
+.work-category-tile>.category-glyph{top:1.4rem;right:1.7rem;font-size:3rem;line-height:1;font-style:normal}
+.work-category-tile>h2{font:500 2rem/1.12 var(--sans);letter-spacing:-.045em;margin:2.3rem 0 1rem;max-width:18ch}
+.work-category-tile>p{font-size:.9rem;line-height:1.7;max-width:48ch;margin-bottom:1.2rem}
+.work-category-tile>.category-examples{display:block;font:.58rem/1.8 var(--mono);letter-spacing:0;max-width:50ch;margin-top:auto}
+.work-category-tile>.category-action{display:flex;align-items:center;justify-content:space-between;gap:1rem;font:.78rem var(--sans);color:var(--ink);border-top:1px solid color-mix(in srgb,var(--ink) 15%,transparent);padding-top:1.15rem;margin-top:1.2rem;letter-spacing:0}
+.category-action b{font-size:1.3rem;font-weight:400}
+.directory-footer{padding-block:3.5rem 5rem}
+.directory-footer>p{font-size:.9rem;color:var(--ink-2)}
+.discipline-header{display:grid;grid-template-columns:1fr 250px;align-items:center;gap:5rem;margin-top:.5rem;padding-bottom:3.5rem;border-bottom:1px solid var(--rule)}
+.discipline-header h1{margin-top:1rem}
+.discipline-emblem{width:250px;aspect-ratio:1;display:grid;place-items:center;border-radius:50%;background:var(--discipline-tint);border:1px solid var(--rule);font:7rem/1 var(--serif);color:var(--accent);transform:rotate(-6deg)}
+.discipline-focus{display:flex;flex-wrap:wrap;gap:.65rem;list-style:none;margin:1.6rem 0 0;padding:0}
+.discipline-focus li{padding:.4rem .7rem;border:1px solid var(--rule);border-radius:40px;font:.58rem var(--mono);color:var(--ink-2)}
+.category-projects{padding-block:3.5rem 0}
+.category-projects-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:1.5rem;margin-bottom:1.8rem}
+.category-projects-heading h2{font-size:2rem;letter-spacing:-.045em;margin-bottom:0}
+.category-projects-heading .eyebrow{margin-bottom:.65rem}
+.category-projects-heading>.text-link{margin-bottom:.25rem}
+.other-disciplines{display:flex;flex-wrap:wrap;gap:.7rem}
+.other-disciplines a{border:1px solid var(--rule);padding:.6rem 1rem;font-size:.78rem;text-decoration:none;border-radius:40px;display:flex;gap:1.2rem;align-items:center}
+.other-disciplines a:hover{background:var(--butter);color:var(--ink)}
+.home-work-intro .section-heading>div:last-child>p{font-size:.94rem;color:var(--ink-2);max-width:38ch}
+.home-work-intro .section-heading .btn{margin-top:.6rem}
+.home-disciplines{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem}
+.home-disciplines a{border-block:1px solid var(--rule);padding:1rem 0;display:flex;gap:.6rem;align-items:center;text-decoration:none;font-size:.8rem;line-height:1.4}
+.home-disciplines a>span{color:var(--accent);font:1.3rem var(--serif)}
+.home-disciplines a>b{margin-left:auto;font-weight:400;color:var(--ink-2)}
+@media(max-width:900px){.discipline-header{grid-template-columns:1fr 160px;gap:2.5rem}.discipline-emblem{width:160px;font-size:5rem}.work-category-tile{padding:1.5rem}.work-category-tile>h2{font-size:1.8rem}.directory-summary{font-size:1rem}.home-disciplines{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.work-directory{grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}.work-category-tile{min-height:285px;padding:1.5rem}.work-category-tile>h2{font-size:1.8rem;margin-top:2rem}.work-category-tile>p{font-size:.87rem;max-width:none}.work-category-tile>.category-examples{font-size:.56rem;max-width:none}.work-category-tile>.category-action{font-size:.76rem}.directory-intro h1,.discipline-intro h1{font-size:2.9rem;margin-bottom:1.3rem}.directory-intro,.discipline-intro{padding-top:1.8rem}.breadcrumbs{font-size:.64rem;margin-bottom:2.2rem}.discipline-header{grid-template-columns:1fr;gap:1.5rem;position:relative;padding-bottom:2.5rem}.discipline-header .eyebrow{padding-right:3rem}.discipline-header h1{max-width:12ch;padding-right:0}.discipline-emblem{position:absolute;right:0;top:-.25rem;width:42px;font-size:1.7rem}.discipline-focus{gap:.5rem;margin-top:1.3rem}.discipline-focus li{font-size:.53rem;padding:.4rem .6rem}.category-projects{padding-top:2.5rem}.category-projects-heading{align-items:flex-start;flex-direction:column;gap:1rem}.category-projects-heading h2{font-size:1.8rem}.directory-footer{padding-block:2.5rem 3.5rem}.directory-footer>p{font-size:.85rem}.home-work-intro .section-heading>div:last-child>p{margin-top:1.5rem}.home-disciplines{gap:.7rem}.home-disciplines a{font-size:.72rem;gap:.4rem}.home-disciplines a>span{font-size:1.1rem}.other-disciplines a{font-size:.7rem}}

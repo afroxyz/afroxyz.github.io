@@ -6,6 +6,8 @@ A dependency-free HTML, CSS and JavaScript portfolio, hosted by GitHub Pages fro
 
 ## Structure
 
+Navigation follows **Work → discipline → case study**. `work.html` introduces the four disciplines with short summaries. Each discipline has its own page and project list; every case study retains its own URL.
+
 - Content design: Kadet Wallet; Beela.
 - Form design: Garden waste collections; SEND education preferences.
 - AI content design: AI Content Design OS; Content Operations Agent; Data Analysis Agent.
@@ -19,7 +21,7 @@ Run `python3 -m http.server 8000` in this directory and open http://localhost:80
 
 ## Editing
 
-`index.html` contains the grouped homepage. `styles.css` retains the original design tokens; `experience.css` extends the paper, terracotta and pastel palette and provides the responsive layout. `portfolio.js` provides progressive enhancement: search, theme selection, mobile navigation, response comparison, case-study navigation, enlarged images and the form prototypes. Case-study content and links remain usable without JavaScript.
+`index.html` is the homepage. `work.html` is the discipline directory. `content-design.html`, `form-design.html`, `ai-content-design.html` and `conversational-design.html` list the relevant projects. Edit each page’s cards when adding a project, and link its case study back to the relevant discipline. Never run old scratch generation scripts over these authored pages. `styles.css` retains the original design tokens; `experience.css` extends the paper, terracotta and pastel palette and provides the responsive layout. `portfolio.js` provides progressive enhancement: search, theme selection, mobile navigation, response comparison, case-study navigation, enlarged images and the form prototypes. Case-study content and links remain usable without JavaScript.
 
 ## Media
 
