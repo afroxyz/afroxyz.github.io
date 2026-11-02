@@ -17,6 +17,67 @@
   function updateMenu() { if (!menu || !nav) return; menu.hidden = !mobile.matches; nav.hidden = mobile.matches && !menuOpen; menu.setAttribute('aria-expanded', String(menuOpen)); }
   if (menu) { menu.addEventListener('click', () => { menuOpen = !menuOpen; updateMenu(); }); $$('a', nav).forEach(a => a.addEventListener('click', () => { menuOpen = false; updateMenu(); })); mobile.addEventListener('change', updateMenu); updateMenu(); document.addEventListener('keydown', e => { if (e.key === 'Escape' && menuOpen) { menuOpen = false; updateMenu(); menu.focus(); } }); }
 
+  const featured = $('[data-featured-carousel]');
+  if (featured) {
+    const track = $('.featured-carousel-track', featured), slides = $$('.featured-slide', featured);
+    const previous = $('[data-featured-prev]', featured), next = $('[data-featured-next]', featured);
+    const dots = $$('[data-featured-go]', featured), count = $('[data-featured-count]', featured);
+    const announcement = $('[data-featured-announcement]', featured);
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let current = -1, pendingScroll = false, destination = null;
+    featured.classList.add('is-enhanced');
+    $('.featured-toolbar', featured).hidden = false;
+    $('.featured-pagination', featured).hidden = false;
+    $('#featured-help').hidden = false;
+    track.tabIndex = 0;
+    track.setAttribute('aria-label', 'Featured project slides');
+    track.setAttribute('aria-describedby', 'featured-help');
+    function setCurrent(index, announce = true) {
+      if (index === current) return;
+      current = index;
+      slides.forEach((slide, i) => {
+        slide.inert = i !== index;
+        if (i === index) slide.removeAttribute('aria-hidden'); else slide.setAttribute('aria-hidden', 'true');
+      });
+      dots.forEach((dot, i) => { dot.classList.toggle('active', i === index); dot.setAttribute('aria-pressed', String(i === index)); });
+      previous.disabled = index === 0; next.disabled = index === slides.length - 1;
+      count.textContent = `${String(index + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`;
+      if (announce) announcement.textContent = `Project ${index + 1} of ${slides.length}: ${slides[index].dataset.slideTitle}`;
+    }
+    function goTo(index, instantly = false) {
+      const target = Math.max(0, Math.min(slides.length - 1, index));
+      destination = target;
+      track.scrollTo({ left: slides[target].offsetLeft - slides[0].offsetLeft, behavior: instantly || reducedMotion.matches ? 'instant' : 'smooth' });
+      setCurrent(target, !instantly);
+    }
+    previous.addEventListener('click', () => goTo(current - 1));
+    next.addEventListener('click', () => goTo(current + 1));
+    dots.forEach(dot => dot.addEventListener('click', () => goTo(Number(dot.dataset.featuredGo))));
+    track.addEventListener('keydown', e => {
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      const destinations = { ArrowLeft: current - 1, ArrowRight: current + 1, Home: 0, End: slides.length - 1 };
+      if (e.key in destinations) { e.preventDefault(); goTo(destinations[e.key]); }
+    });
+    track.addEventListener('scroll', () => {
+      if (pendingScroll) return;
+      pendingScroll = true;
+      requestAnimationFrame(() => {
+        const origin = slides[0].offsetLeft;
+        if (destination !== null) {
+          if (Math.abs(slides[destination].offsetLeft - origin - track.scrollLeft) <= 2) destination = null;
+          else { pendingScroll = false; return; }
+        }
+        let nearest = 0, distance = Infinity;
+        slides.forEach((slide, i) => { const delta = Math.abs(slide.offsetLeft - origin - track.scrollLeft); if (delta < distance) { nearest = i; distance = delta; } });
+        setCurrent(nearest);
+        pendingScroll = false;
+      });
+    }, { passive: true });
+    ['pointerdown', 'touchstart', 'wheel'].forEach(event => track.addEventListener(event, () => { destination = null; }, { passive: true }));
+    if ('ResizeObserver' in window) { let width = track.clientWidth; new ResizeObserver(() => { if (track.clientWidth !== width) { width = track.clientWidth; goTo(Math.max(0, current), true); } }).observe(track); }
+    setCurrent(0, false);
+  }
+
   const cards = $$('.project-card'), search = $('#project-search');
   if (cards.length && search && $('.project-controls')) {
     $('.project-controls').hidden = false;

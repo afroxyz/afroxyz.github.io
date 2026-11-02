@@ -115,3 +115,33 @@ nav a.is-current{color:var(--accent)}
 @media(max-width:800px){.support-visual>b{font-size:2rem;margin:.8rem 0}.support-visual>div{font-size:.52rem;gap:.25rem}.support-visual>div>span{padding:.4rem .45rem}.support-visual>small{font-size:.45rem}.support-visual>span,.medical-visual>span,.compiler-visual>span{font-size:.43rem}.medical-visual b{font-size:1.2rem;padding:.7rem .8rem}.medical-visual>div{gap:.6rem;margin-top:1rem}.medical-visual p{font-size:.65rem}.compiler-visual>b{font-size:1.2rem;margin:.7rem 0}.compiler-visual code{font-size:.56rem;padding:.65rem .8rem}.compiler-visual small{font-size:.45rem;margin-top:.65rem}.evidence-metrics{gap:1rem}.evidence-metrics strong{font-size:2.6rem}.artefact-pair .source-figure .image-enlarge{height:350px}.artefact-pair .source-figure .image-enlarge img{max-height:320px}.case-cover .support-visual>b{font-size:2.4rem}}
 @media(max-width:520px){.project-state{font-size:.56rem}.secondary-discipline{font-size:.65rem}.support-visual>b{font-size:2.4rem;margin:.8rem 0 1.1rem}.support-visual>div{font-size:.6rem;gap:.4rem}.support-visual>div>span{padding:.4rem .6rem}.support-visual>small{font-size:.48rem}.support-visual>span,.medical-visual>span,.compiler-visual>span{font-size:.48rem}.medical-visual b{font-size:1.5rem;padding:.8rem 1rem}.medical-visual p{font-size:.75rem}.compiler-visual>b{font-size:1.4rem}.compiler-visual code{font-size:.65rem;padding:.8rem 1rem}.compiler-visual small{font-size:.5rem}.artefact-pair{grid-template-columns:1fr;gap:1.5rem}.artefact-pair .source-figure .image-enlarge{height:390px}.artefact-pair .source-figure .image-enlarge img{max-height:365px}.evidence-metrics{grid-template-columns:1fr;gap:1.3rem}.evidence-metrics>div{border-bottom:1px solid var(--rule);padding-bottom:1.2rem}.evidence-metrics>div:last-child{border:0;padding-bottom:0}.evidence-metrics strong{font-size:3.2rem}.evidence-metrics span{font-size:.85rem}.evidence-metrics small{font-size:.6rem}.journey-architecture ol,.medical-journey,.compiler-architecture,.decision-comparison{grid-template-columns:1fr}.journey-architecture{padding:1rem}.source-figure .image-enlarge img{max-height:470px}.case-cover .support-visual>b{font-size:2.2rem}.case-cover .compiler-visual>b{font-size:1.2rem}.case-cover .compiler-visual code{font-size:.56rem}.case-cover .compiler-visual small{margin-top:.7rem}}
 @media(max-width:520px){.cover-support,.cover-medical,.cover-compiler{min-height:280px}.evidenced-case .case-cover{aspect-ratio:auto;min-height:280px;padding:1.5rem}}
+
+/* Manual featured-project carousel; all five cards remain available without JS. */
+.featured-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.2rem}
+.featured-toolbar>.eyebrow{display:flex;align-items:center;gap:1rem;margin:0}
+[data-featured-count]{font:.76rem var(--mono);color:var(--accent);min-width:4.5rem}
+.featured-count-label{font-size:.58rem;letter-spacing:.09em}
+.featured-arrows{display:flex;gap:.55rem}
+.featured-arrows button{width:43px;height:43px;border:1px solid var(--ink);border-radius:50%;background:transparent;display:grid;place-items:center;font-size:1.2rem}
+.featured-arrows button:hover:not(:disabled){background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+.featured-arrows button:disabled{opacity:.3;border-color:var(--ink-2)}
+.featured-carousel.is-enhanced .featured-carousel-track{display:flex;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;position:relative;border-radius:12px;-webkit-overflow-scrolling:touch}
+.featured-carousel.is-enhanced .featured-carousel-track::-webkit-scrollbar{display:none}
+.featured-carousel.is-enhanced .featured-slide{flex:0 0 100%;width:100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;padding:0 1px 1px}
+.featured-carousel.is-enhanced .project-link{display:grid;grid-template-columns:1.05fr 1fr;min-height:350px;height:100%;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--panel)}
+.featured-carousel.is-enhanced .project-cover{aspect-ratio:auto;border:0;border-right:1px solid var(--rule);border-radius:0;min-height:350px}
+.featured-carousel.is-enhanced .image-mat img{max-height:285px;max-width:94%}
+.featured-carousel.is-enhanced .project-info{padding:2.3rem;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.featured-carousel.is-enhanced .project-info h3{font-size:1.9rem;line-height:1.2;max-width:none;gap:1rem;margin-top:.4rem}
+.featured-carousel.is-enhanced .project-info h3>span{flex-shrink:0}
+.featured-carousel.is-enhanced .project-info p{font-size:.93rem;line-height:1.7;margin-top:.5rem}
+.featured-carousel.is-enhanced .project-info .project-tools{font-size:.59rem;margin-top:.4rem}
+.featured-carousel.is-enhanced .card-status{align-self:flex-start;margin-top:.2rem}
+.featured-pagination{display:flex;justify-content:center;gap:.35rem;margin-top:1.2rem}
+.featured-dot{border:0;background:transparent;min-width:38px;min-height:36px;padding:.5rem;display:grid;place-items:center;border-radius:20px}
+.featured-dot>span{display:block;width:16px;height:5px;background:var(--rule);border-radius:6px;transition:width .2s,background .2s}
+.featured-dot.active>span{width:30px;background:var(--accent)}
+.featured-dot:hover>span{background:var(--ink-2)}
+.featured-carousel-track:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+@media(max-width:800px){.featured-carousel.is-enhanced .project-info{padding:1.5rem}.featured-carousel.is-enhanced .project-info h3{font-size:1.5rem}.featured-carousel.is-enhanced .project-info p{font-size:.83rem}.featured-carousel.is-enhanced .project-cover{min-height:310px}.featured-carousel.is-enhanced .image-mat img{max-height:240px}.featured-carousel.is-enhanced .project-info .project-tools{font-size:.53rem}}
+@media(max-width:640px){.featured-carousel.is-enhanced .project-link{grid-template-columns:1fr}.featured-carousel.is-enhanced .project-cover{border-right:0;border-bottom:1px solid var(--rule);min-height:270px;aspect-ratio:1.5}.featured-carousel.is-enhanced .project-info{padding:1.5rem 1.25rem;justify-content:flex-start}.featured-carousel.is-enhanced .project-info h3{font-size:1.55rem}.featured-carousel.is-enhanced .project-info p{font-size:.87rem}.featured-carousel.is-enhanced .project-info .project-tools{font-size:.56rem}.featured-toolbar>.eyebrow{gap:.4rem}.featured-count-label{font-size:.51rem}.featured-arrows button{width:40px;height:40px}.featured-carousel.is-enhanced .image-mat img{max-height:220px}.featured-carousel.is-enhanced .cover-mara .image-mat img{max-height:225px}}
