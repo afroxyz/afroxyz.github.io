@@ -8,9 +8,9 @@ A dependency-free HTML, CSS and JavaScript portfolio, hosted by GitHub Pages fro
 
 Navigation follows **Work → discipline → case study**. `work.html` introduces the four disciplines with short summaries. Each discipline has its own page and project list; every case study retains its own URL.
 
-- Content design: Kadet Wallet; Beela.
-- Form design: Garden waste collections; SEND education preferences.
-- AI content design: AI Content Design OS; Content Operations Agent; Data Analysis Agent.
+- Content design: DHP & Council Tax Hardship Fund; Kadet Wallet; Beela.
+- Form design: DHP & Council Tax Hardship Fund; Medical Priority Assessment; Form Design Compiler; Garden waste collections; SEND education preferences.
+- AI content design: Form Design Compiler; AI Content Design OS; Content Operations Agent; Data Analysis Agent.
 - Conversational design: Feedback Analyser; 3G Lodges: Mara; Nomi Pay.
 
 The existing eight case-study narratives and original images are preserved. The two form-design studies are portfolio reconstructions, clearly labelled on their pages; their prototypes do not submit data or take payment.
@@ -36,3 +36,7 @@ Semantic headings and navigation, keyboard controls, visible focus, native video
 ## Validation for this update
 
 Checked local links and assets, one H1 per page, duplicate IDs, removal of placeholder contact links, JavaScript syntax, original narrative preservation, 320px and 390px phone layout widths, project search, conversation comparison, native video playback and captions, image enlargement, and both form prototypes.
+
+## Source-backed additions — 2 November 2026
+
+Three new unique case studies bring the portfolio to 13. Financial support and the compiler are cross-listed in relevant disciplines and use a single canonical project page each. DHP uses the supplied ten-week Miro review; Medical Priority distinguishes documented design from unmeasured outcomes; the compiler distinguishes development controls from benchmarked reliability. See `evidence/source-notes.md` for claim scope and media provenance.

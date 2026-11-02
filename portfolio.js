@@ -18,7 +18,7 @@
   if (menu) { menu.addEventListener('click', () => { menuOpen = !menuOpen; updateMenu(); }); $$('a', nav).forEach(a => a.addEventListener('click', () => { menuOpen = false; updateMenu(); })); mobile.addEventListener('change', updateMenu); updateMenu(); document.addEventListener('keydown', e => { if (e.key === 'Escape' && menuOpen) { menuOpen = false; updateMenu(); menu.focus(); } }); }
 
   const cards = $$('.project-card'), search = $('#project-search');
-  if (cards.length) {
+  if (cards.length && search && $('.project-controls')) {
     $('.project-controls').hidden = false;
     const updateProjects = () => {
       const term = search.value.toLocaleLowerCase().trim(); let visible = 0;
