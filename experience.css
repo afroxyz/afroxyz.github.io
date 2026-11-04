@@ -145,3 +145,31 @@ nav a.is-current{color:var(--accent)}
 .featured-carousel-track:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
 @media(max-width:800px){.featured-carousel.is-enhanced .project-info{padding:1.5rem}.featured-carousel.is-enhanced .project-info h3{font-size:1.5rem}.featured-carousel.is-enhanced .project-info p{font-size:.83rem}.featured-carousel.is-enhanced .project-cover{min-height:310px}.featured-carousel.is-enhanced .image-mat img{max-height:240px}.featured-carousel.is-enhanced .project-info .project-tools{font-size:.53rem}}
 @media(max-width:640px){.featured-carousel.is-enhanced .project-link{grid-template-columns:1fr}.featured-carousel.is-enhanced .project-cover{border-right:0;border-bottom:1px solid var(--rule);min-height:270px;aspect-ratio:1.5}.featured-carousel.is-enhanced .project-info{padding:1.5rem 1.25rem;justify-content:flex-start}.featured-carousel.is-enhanced .project-info h3{font-size:1.55rem}.featured-carousel.is-enhanced .project-info p{font-size:.87rem}.featured-carousel.is-enhanced .project-info .project-tools{font-size:.56rem}.featured-toolbar>.eyebrow{gap:.4rem}.featured-count-label{font-size:.51rem}.featured-arrows button{width:40px;height:40px}.featured-carousel.is-enhanced .image-mat img{max-height:220px}.featured-carousel.is-enhanced .cover-mara .image-mat img{max-height:225px}}
+
+/* Case study outcome summaries */
+.case-outcome {
+  max-width: 780px;
+  margin-top: 1.75rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--rule);
+  border-inline-start: 4px solid var(--c, var(--accent));
+  border-radius: 10px;
+  background: var(--panel);
+}
+.case-outcome .eyebrow { margin: 0 0 .45rem; }
+.case-outcome h2 {
+  margin: 0 0 .65rem;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+.case-outcome > p:not(.eyebrow) { margin: 0; max-width: 66ch; font-size: .92rem; }
+.case-outcome > p.case-outcome-evidence:not(.eyebrow) {
+  margin-top: .75rem;
+  color: var(--ink-2);
+}
+.case-outcome-evidence a {
+  color: var(--ink);
+  text-underline-offset: .18em;
+  white-space: nowrap;
+}
