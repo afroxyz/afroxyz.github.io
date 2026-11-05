@@ -6,7 +6,7 @@ A dependency-free HTML, CSS and JavaScript portfolio, hosted by GitHub Pages fro
 
 ## Structure
 
-Navigation follows **Work → discipline → case study**. `work.html` introduces the four disciplines with short summaries. Each discipline has its own page and project list; every case study retains its own URL.
+Navigation follows **Work → discipline → case study**. The Form Design overview remains public. Its five full case studies and supporting images are served from a separate host with server-side password checks; the original GitHub Pages study URLs are access redirects. `work.html` introduces the four disciplines with short summaries. Each discipline has its own page and project list; every case study retains its own URL.
 
 - Content design: DHP & Council Tax Hardship Fund; Kadet Wallet; Beela.
 - Form design: DHP & Council Tax Hardship Fund; Medical Priority Assessment; Form Design Compiler; Garden waste collections; SEND education preferences.
