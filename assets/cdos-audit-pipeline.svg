@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="d2" viewBox="0 0 900 810" role="img" aria-label="Flowchart of the content-audit pipeline from input to a human-gated send" width="100%" style="height:auto;max-width:560px;display:block;margin-inline:auto">
+<defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#514d43"/></marker></defs>
+<style>#d2 text{font-family:Arial, sans-serif}#d2 .b{fill:#eae4d6;stroke:#cfc8b6;stroke-width:1.5}#d2 .acc{fill:color-mix(in srgb,#2e7e7e 14%,#eae4d6);stroke:#2e7e7e;stroke-width:2}#d2 .mut{fill:color-mix(in srgb,#514d43 10%,#eae4d6);stroke:#cfc8b6;stroke-width:1.5}#d2 .dia{fill:#eae4d6;stroke:#cfc8b6;stroke-width:1.5}#d2 .diaA{fill:color-mix(in srgb,#2e7e7e 12%,#eae4d6);stroke:#2e7e7e;stroke-width:2}#d2 .t{fill:#16150f;font-size:12.5px}#d2 .ti{fill:#16150f;font-size:13px;font-weight:600}#d2 .cap{fill:#514d43;font-size:11px}#d2 .e{fill:none;stroke:#514d43;stroke-width:1.5}#d2 .lbl{fill:#514d43;font-size:11px}</style>
+<rect class="b" x="300" y="24" width="300" height="50" rx="6"/><text class="t" x="450" y="54" text-anchor="middle">Input: URL · Excel · draft · screenshot</text>
+<path class="e" d="M450,74 L450,94" marker-end="url(#ar2)"/>
+<polygon class="dia" points="450,96 566,140 450,184 334,140"/><text class="t" x="450" y="136" text-anchor="middle">Quick check or</text><text class="t" x="450" y="152" text-anchor="middle">full audit?</text>
+<rect class="b" x="36" y="104" width="258" height="74" rx="6"/><text class="t" x="165" y="128" text-anchor="middle">Quick check —</text><text class="cap" x="165" y="146" text-anchor="middle">agent reviews in chat</text><text class="cap" x="165" y="162" text-anchor="middle">style · a11y · plain English</text>
+<path class="e" d="M334,140 L298,140" marker-end="url(#ar2)"/><text class="lbl" x="316" y="132" text-anchor="middle">Quick</text>
+<path class="e" d="M450,184 L450,214" marker-end="url(#ar2)"/><text class="lbl" x="470" y="204" text-anchor="start">Full audit</text>
+<rect class="b" x="360" y="214" width="180" height="46" rx="6"/><text class="t" x="450" y="242" text-anchor="middle">Python engine</text>
+<path class="e" d="M450,260 L450,286" marker-end="url(#ar2)"/>
+<rect class="acc" x="315" y="286" width="270" height="54" rx="6"/><text class="ti" x="450" y="309" text-anchor="middle">Safety gate</text><text class="cap" x="450" y="327" text-anchor="middle">public royalgreenwich.gov.uk only</text>
+<path class="e" d="M450,340 L450,366" marker-end="url(#ar2)"/>
+<rect class="b" x="300" y="366" width="300" height="64" rx="6"/><text class="ti" x="450" y="391" text-anchor="middle">Mechanical checks</text><text class="cap" x="450" y="411" text-anchor="middle">links · dates · duplicates · accessibility</text>
+<path class="e" d="M450,430 L450,456" marker-end="url(#ar2)"/>
+<rect class="b" x="330" y="456" width="240" height="52" rx="6"/><text class="t" x="450" y="478" text-anchor="middle">Report + summary →</text><text class="cap" x="450" y="495" text-anchor="middle">local staging folder</text>
+<path class="e" d="M450,508 L450,536" marker-end="url(#ar2)"/>
+<polygon class="diaA" points="450,538 582,588 450,638 318,588"/><text class="ti" x="450" y="585" text-anchor="middle">Human</text><text class="ti" x="450" y="603" text-anchor="middle">reviews</text>
+<path class="e" d="M318,588 L254,588" marker-end="url(#ar2)"/><text class="lbl" x="312" y="578" text-anchor="end">Not good enough</text>
+<rect class="mut" x="40" y="560" width="214" height="56" rx="6"/><text class="t" x="147" y="584" text-anchor="middle">Stop —</text><text class="cap" x="147" y="601" text-anchor="middle">nothing sent</text>
+<path class="e" d="M450,638 L450,664" marker-end="url(#ar2)"/><text class="lbl" x="470" y="656" text-anchor="start">Approved</text>
+<rect class="b" x="300" y="664" width="300" height="52" rx="6"/><text class="t" x="450" y="686" text-anchor="middle">Move approved report</text><text class="cap" x="450" y="703" text-anchor="middle">to watched folder</text>
+<path class="e" d="M450,716 L450,742" marker-end="url(#ar2)"/>
+<rect class="acc" x="300" y="742" width="300" height="56" rx="6"/><text class="ti" x="450" y="766" text-anchor="middle">Power Automate</text><text class="cap" x="450" y="784" text-anchor="middle">formatted email · Teams card</text>
+</svg>

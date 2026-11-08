@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="d1" viewBox="0 0 900 440" role="img" aria-label="Shared standards and docs feeding eight thin agents" width="100%" style="height:auto;max-width:840px;display:block;margin-inline:auto">
+<defs><marker id="ar1" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#514d43"/></marker></defs>
+<style>#d1 text{font-family:Arial, sans-serif}#d1 .b{fill:#eae4d6;stroke:#cfc8b6;stroke-width:1.5}#d1 .src{fill:color-mix(in srgb,#2e7e7e 10%,#eae4d6);stroke:#2e7e7e;stroke-width:1.5}#d1 .t{fill:#16150f;font-size:12.5px}#d1 .ti{fill:#16150f;font-size:14px;font-weight:600}#d1 .cap{fill:#514d43;font-size:11px}#d1 .e{fill:none;stroke:#514d43;stroke-width:1.5}#d1 .acc{fill:none;stroke:#2e7e7e;stroke-width:2.5}</style>
+<rect class="src" x="40" y="24" width="480" height="112" rx="8"/><text class="ti" x="58" y="48">standards/</text><text class="cap" x="152" y="48">single source of truth</text>
+<rect class="b" x="58" y="68" width="140" height="44" rx="6"/><text class="t" x="128" y="95" text-anchor="middle">Style guide</text>
+<rect class="b" x="212" y="68" width="150" height="44" rx="6"/><text class="t" x="287" y="88" text-anchor="middle">Behavioural</text><text class="t" x="287" y="104" text-anchor="middle">principles</text>
+<rect class="b" x="376" y="68" width="128" height="44" rx="6"/><text class="t" x="440" y="88" text-anchor="middle">Email</text><text class="t" x="440" y="104" text-anchor="middle">templates</text>
+<rect class="src" x="548" y="24" width="312" height="112" rx="8"/><text class="ti" x="566" y="48">docs/</text><text class="cap" x="612" y="48">procedures</text>
+<rect class="b" x="566" y="68" width="130" height="44" rx="6"/><text class="t" x="631" y="95" text-anchor="middle">Drupal</text>
+<rect class="b" x="710" y="68" width="132" height="44" rx="6"/><text class="t" x="776" y="95" text-anchor="middle">SharePoint</text>
+<path class="e" d="M280,136 L280,186"/><path class="e" d="M704,136 L704,186"/>
+<path class="acc" d="M100,186 L800,186"/><text class="cap" x="450" y="178" text-anchor="middle">every agent reads the same standards</text>
+<path class="e" d="M180,186 L180,250" marker-end="url(#ar1)"/><path class="e" d="M380,186 L380,250" marker-end="url(#ar1)"/><path class="e" d="M560,186 L560,250" marker-end="url(#ar1)"/><path class="e" d="M740,186 L740,250" marker-end="url(#ar1)"/>
+<rect class="b" x="40" y="252" width="820" height="166" rx="8"/><text class="ti" x="58" y="276">agents/</text><text class="cap" x="120" y="276">thin, specialised</text>
+<rect class="b" x="58" y="294" width="185" height="46" rx="6"/><text class="t" x="150" y="322" text-anchor="middle">operations</text>
+<rect class="b" x="255" y="294" width="185" height="46" rx="6"/><text class="t" x="347" y="322" text-anchor="middle">service design</text>
+<rect class="b" x="452" y="294" width="185" height="46" rx="6"/><text class="t" x="544" y="322" text-anchor="middle">research</text>
+<rect class="b" x="649" y="294" width="185" height="46" rx="6"/><text class="t" x="741" y="322" text-anchor="middle">user testing</text>
+<rect class="b" x="58" y="352" width="185" height="46" rx="6"/><text class="t" x="150" y="380" text-anchor="middle">conversation design</text>
+<rect class="b" x="255" y="352" width="185" height="46" rx="6"/><text class="t" x="347" y="380" text-anchor="middle">form builder</text>
+<rect class="b" x="452" y="352" width="185" height="46" rx="6"/><text class="t" x="544" y="380" text-anchor="middle">content design</text>
+<rect class="b" x="649" y="352" width="185" height="46" rx="6"/><text class="t" x="741" y="380" text-anchor="middle">check your answers</text>
+</svg>
