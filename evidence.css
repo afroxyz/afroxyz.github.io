@@ -85,3 +85,53 @@
   .evidence-note, .evidence-downloads, .related-evidence { padding: 1rem; }
   .evidence-badge { font-size: .58rem; }
 }
+
+.os-sketches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.case-page article .os-sketches figure { margin: 0; min-width: 0; }
+.os-sketches img { display: block; width: 100%; height: auto; }
+.os-sketches figcaption { margin-top: .65rem; }
+.os-concept-details {
+  margin: .8rem 0;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--panel);
+}
+.os-concept-details summary {
+  cursor: pointer;
+  padding: .9rem 1rem;
+  font-weight: 500;
+}
+.os-concept-details summary::marker { color: var(--accent); }
+.os-concept-details summary:hover { color: var(--accent); }
+.os-concept-details[open] summary { border-bottom: 1px solid var(--rule); }
+.os-concept-details .os-sketches { margin: 1rem; }
+.os-workbenches {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+  padding: 1rem;
+}
+.case-page article .os-workbenches h4,
+.case-page article #os-worked-example {
+  margin: 0 0 .45rem;
+  font-size: 1rem;
+}
+.case-page article .os-workbenches ul { margin: 0; padding-left: 1.1rem; }
+.case-page article .os-workbenches li { font-size: .85rem; line-height: 1.55; margin-bottom: .65rem; }
+.os-workbenches li span { display: block; color: var(--ink-2); }
+@media (min-width: 901px) {
+  .system-links.os-system-links { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+  .os-workbenches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .os-sketches { grid-template-columns: 1fr; }
+  .os-workbenches { grid-template-columns: 1fr; }
+}

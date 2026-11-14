@@ -4,7 +4,7 @@
 <script>try{document.documentElement.dataset.theme=localStorage.getItem('chika-theme')||'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="experience.css?v=case-outcomes"><link rel="stylesheet" href="evidence.css?v=20261108"><script src="portfolio.js" defer></script><title>AI Content Design OS · Chika Nwakanma</title><meta name="description" content="A version-controlled operating system of specialised AI agents and tools that all read the same shared content standards, with a tested audit engine and a human-gated notification pipeline.">
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="experience.css?v=case-outcomes"><link rel="stylesheet" href="evidence.css?v=architecture-ideation"><script src="portfolio.js" defer></script><title>AI Content Design OS · Chika Nwakanma</title><meta name="description" content="A version-controlled operating system of specialised AI agents and tools that all read the same shared content standards, with a tested audit engine and a human-gated notification pipeline.">
 </head><body class="case-page">
 <a class="skip" href="#main">Skip to content</a><div class="reading-progress" aria-hidden="true"></div>
 <div class="header-shell"><header class="site wrap"><a class="brand" href="index.html" aria-label="Chika Nwakanma, home"><span class="monogram" aria-hidden="true">cn.</span><span>Chika Nwakanma</span></a>
@@ -18,7 +18,7 @@
 <p class="case-outcome-evidence"><strong>Evidence.</strong> In use on a live form migration. Audit time and style corrections are being tracked. <a href="#impact-measures-in-progress">Read the details <span aria-hidden="true">↓</span></a></p>
 </section></div>
 <div class="wrap case-cover-wrap"><div class="project-cover case-cover cover-os"><span class="cover-index">PROJECT ARTEFACT / AI Content Design OS</span><div class="image-mat"><img src="assets/cdos-flow.png" alt="AI Content Design OS project artefact" loading="lazy"></div></div></div><div class="wrap"><dl class="meta"><div><dt>Role</dt><dd>Content &amp; conversational design, AI model design, architecture, build</dd></div><div><dt>Tools</dt><dd>Claude Code, VS Code, Python, Git/GitHub, Power Automate, Drupal Webform, SharePoint</dd></div><div><dt>Context</dt><dd>Royal Borough of Greenwich digital team</dd></div><div><dt>Status</dt><dd>Core system in use; productisation in progress</dd></div></dl>
-<div class="evidence-status"><span class="evidence-badge">Professional system · in use</span><span>Operational impact measurement underway.</span></div><nav class="system-explorer" aria-label="Explore the system"><p class="eyebrow">Explore the system</p><div class="system-links"><a href="#architecture-and-decisions"><strong>Architecture<span aria-hidden="true">↗</span></strong><span>Responsibilities, knowledge and approval boundaries</span></a><a href="#implementation-evidence"><strong>Implementation<span aria-hidden="true">↗</span></strong><span>Repository, notification flow and diagrams</span></a><a href="#evaluation-and-failure-analysis"><strong>Testing<span aria-hidden="true">↗</span></strong><span>Recorded checks and design corrections</span></a><a href="#results"><strong>Results & scope<span aria-hidden="true">↗</span></strong><span>What is delivered and what needs measuring</span></a></div></nav>
+<div class="evidence-status"><span class="evidence-badge">Professional system · in use</span><span>Operational impact measurement underway.</span></div><nav class="system-explorer" aria-label="Explore the system"><p class="eyebrow">Explore the system</p><div class="system-links os-system-links"><a href="#architecture-ideation"><strong>Concept<span aria-hidden="true">↗</span></strong><span>Architecture sketches and proposed capabilities</span></a><a href="#architecture-and-decisions"><strong>Architecture<span aria-hidden="true">↗</span></strong><span>Responsibilities, knowledge and approval boundaries</span></a><a href="#implementation-evidence"><strong>Implementation<span aria-hidden="true">↗</span></strong><span>Repository, notification flow and diagrams</span></a><a href="#evaluation-and-failure-analysis"><strong>Testing<span aria-hidden="true">↗</span></strong><span>Recorded checks and design corrections</span></a><a href="#results"><strong>Results & scope<span aria-hidden="true">↗</span></strong><span>What is delivered and what needs measuring</span></a></div></nav>
 <div class="principle"><p>The hard part wasn't "use AI to write content." It was designing an architecture where every agent applies the same standards, a rule is updated once rather than in eight places, and a human still signs off on anything public-facing.</p></div>
 <article class="narrow" style="margin-inline:0;width:min(780px,100%)">
 <span id="the-situation" class="evidence-anchor" aria-hidden="true"></span><h2 id="organisational-problem">The organisational problem</h2>
@@ -28,6 +28,75 @@
 <p>I designed the OS to make that knowledge reusable through three connected choices.</p>
 <ul><li><b>A shared knowledge layer</b> for content standards, behavioural principles and CMS procedures.</li><li><b>Specialised agent instructions and deterministic scripts</b> for the different kinds of work.</li><li><b>Reviewable outputs and an explicit human release step</b> before notification.</li></ul>
 <p>My contribution covered the shared standards, agent responsibilities, the audit workflow and the approval handoff. The project record documents a core system in use on a live form-migration programme, with operational impact measurement underway.</p>
+<h2 id="architecture-ideation">How I defined the architecture and capabilities</h2>
+<p>I explored how one workspace could support the full content lifecycle, from investigating a service problem to measuring what changed after release. The sketches and capability catalogue below describe that wider product concept. The working council system is documented in <a href="#architecture-and-decisions">Architecture and design decisions</a>.</p>
+
+<h3>What projects share</h3>
+<p>I designed the shared core around project context, approved standards, evidence, decisions, quality checks and reporting. A form redesign and a website audit can follow different workflows while using the same rules for recording findings and routing work for review. Each project keeps its own files and decisions, with approved outputs shared where needed.</p>
+<div class="os-sketches">
+  <figure>
+    <img src="assets/cdos-concept-lifecycle.webp" width="882" height="869" loading="lazy" alt="Workspace concept with six lifecycle stages: Discover, Design, Build, Assure, Operate and Improve.">
+    <figcaption><strong>Lifecycle sketch.</strong> Six stages describe how evidence moves from discovery through delivery and improvement.</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/cdos-concept-core.webp" width="882" height="1137" loading="lazy" alt="Shared core concept connecting project management, AI instructions, evidence, quality checks, decisions and reporting to different types of work.">
+    <figcaption><strong>Shared core sketch.</strong> Transactions, service requests, websites, research, content operations and conversation design draw on common services.</figcaption>
+  </figure>
+</div>
+
+<h3>How I scoped the work</h3>
+<p>The lifecycle describes <em>when</em> work happens. The domain map describes <em>what kind</em> of work a team is doing. The workbenches describe <em>what the system could do</em> to help. A form redesign, for example, sits in the Transactions domain and can use workbenches for research, form design, policy verification and evaluation.</p>
+<details class="os-concept-details">
+  <summary>View the 12 operating domains</summary>
+  <div class="os-sketches">
+    <figure>
+      <img src="assets/cdos-concept-domains-1.webp" width="882" height="1252" loading="lazy" alt="First six domains: Transactions, Websites and information architecture, Data and Insights, service requests and tickets, Content Operations, and User Research.">
+      <figcaption><strong>Operating domains, part 1.</strong> Service delivery, requests, content maintenance and discovery.</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/cdos-concept-domains-2.webp" width="882" height="998" loading="lazy" alt="Remaining six domains: Content Strategy, Conversation and AI, Service Design, Testing and Quality Assurance, Delivery and Governance, and Knowledge and Learning.">
+      <figcaption><strong>Operating domains, part 2.</strong> Strategy, design, assurance, governance and learning.</figcaption>
+    </figure>
+  </div>
+</details>
+<details class="os-concept-details">
+  <summary>View the 18 proposed workbenches</summary>
+  <div class="os-workbenches">
+    <div>
+      <h4>Discover</h4>
+      <ul><li><strong>Research Intelligence</strong><span>Synthesise interviews, feedback and usability findings.</span></li><li><strong>Service and Journey Intelligence</strong><span>Map journeys, dependencies and points of failure.</span></li><li><strong>Content Audit and Inventory</strong><span>Inventory content and identify issues for review.</span></li></ul>
+    </div>
+    <div>
+      <h4>Design</h4>
+      <ul><li><strong>Content Strategy Studio</strong><span>Define information architecture and content models.</span></li><li><strong>Content Creation Studio</strong><span>Draft pages and microcopy from approved requirements.</span></li><li><strong>Behavioural Design Lab</strong><span>Apply behavioural principles to design decisions.</span></li></ul>
+    </div>
+    <div>
+      <h4>Build</h4>
+      <ul><li><strong>Form and Interaction Designer</strong><span>Specify questions, branching, validation and errors.</span></li><li><strong>Conversation and Agent Designer</strong><span>Define chat, voice and agent behaviour.</span></li><li><strong>Design-to-Implementation Studio</strong><span>Turn designs into specifications and prototypes.</span></li></ul>
+    </div>
+    <div>
+      <h4>Assure</h4>
+      <ul><li><strong>Content Quality Engine</strong><span>Review clarity, consistency and usefulness.</span></li><li><strong>Accessibility and Inclusion Engine</strong><span>Flag potential barriers and define checks.</span></li><li><strong>Policy and Evidence Validator</strong><span>Check claims against approved sources.</span></li></ul>
+    </div>
+    <div>
+      <h4>Operate</h4>
+      <ul><li><strong>Content Freshness Monitor</strong><span>Flag potentially outdated content for owners to review.</span></li><li><strong>Content Workflow Manager</strong><span>Track requests, assignments and approvals.</span></li><li><strong>Content Knowledge Hub</strong><span>Maintain approved patterns and decision records.</span></li></ul>
+    </div>
+    <div>
+      <h4>Improve</h4>
+      <ul><li><strong>Content Analytics Intelligence</strong><span>Investigate search, funnel and task data.</span></li><li><strong>Experimentation and Evaluation Lab</strong><span>Test alternatives and compare performance.</span></li><li><strong>Content Impact and Reporting</strong><span>Link changes to service and operational outcomes.</span></li></ul>
+    </div>
+  </div>
+</details>
+
+<h3>What a workbench needs to do</h3>
+<p>I defined a workbench by the inputs it needs, how it processes them, the output it produces, who reviews that output and how to measure success. Code can check a broken link or an overdue review date. An agent can suggest why a finding matters and link to the evidence. An authorised person verifies policy interpretations and approves publication.</p>
+<aside class="evidence-note" aria-labelledby="os-worked-example">
+  <h4 id="os-worked-example">Worked example in the product concept</h4>
+  <p>If a housing support form shows eligibility late, the workbench could record the page and supporting evidence, flag wasted effort as a hypothesis, and suggest testing an earlier check. A service owner verifies the eligibility rule. The designer can then carry the verified rule into the form specification and its test cases, and measure whether fewer applicants abandon the form after release. If the eligibility rule changes, the concept calls for the system to flag the affected questions, validation rules and tests for review.</p>
+</aside>
+<p>For the broader product, the blueprint proposed starting with a Content Freshness Monitor. It would take a page inventory, flag potential issues with evidence, and route findings to an owner for resolution. Confirmed issues, false positives and time to review would help decide whether to extend the workflow to other workbenches. The working audit and its human approval step illustrate how those principles apply in the council system.</p>
+
 <span id="decisions" class="evidence-anchor" aria-hidden="true"></span><h2 id="architecture-and-decisions">Architecture and design decisions</h2>
 <h3>1. Thin agents, shared standards</h3>
 <p>This is the central architectural decision. Instead of each agent carrying its own copy of the style guide and procedures, the standards live once in a shared folder and every agent reads them.</p><p>Each agent is configured to read the shared standards. Updating the authoritative guidance in one place reduces duplicated maintenance. Review still needs to verify which rule an agent used and whether it applied that rule correctly.</p>
@@ -152,3 +221,4 @@
 <nav class="pager" aria-label="Case-study navigation"><a href="ai-content-design.html">← All AI content design projects</a><a href="content-operations-agent.html">Next: Content Operations Agent →</a></nav></div></main><footer class="site"><div class="wrap footer-inner"><div><a class="brand" href="index.html">Chika Nwakanma<span class="accent-dot">.</span></a><p>Complex digital services, content systems and intelligent experiences.</p></div><div class="footer-links"><a href="mailto:chikasco@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/chika-nwakanma/">LinkedIn ↗</a><a href="https://github.com/afroxyz">GitHub ↗</a></div><p class="copyright">© 2026 · Independent portfolio. Views my own.</p></div></footer>
 <button class="back-top" aria-label="Back to top" hidden>↑</button>
 <dialog class="image-dialog" aria-label="Enlarged project image"><button class="dialog-close" aria-label="Close image">Close <span aria-hidden="true">×</span></button><img alt=""><p></p></dialog></body></html>
+
