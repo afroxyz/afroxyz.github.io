@@ -29,7 +29,7 @@
 <ul><li><b>A shared knowledge layer</b> for content standards, behavioural principles and CMS procedures.</li><li><b>Specialised agent instructions and deterministic scripts</b> for the different kinds of work.</li><li><b>Reviewable outputs and an explicit human release step</b> before notification.</li></ul>
 <p>My contribution covered the shared standards, agent responsibilities, the audit workflow and the approval handoff. The project record documents a core system in use on a live form-migration programme, with operational impact measurement underway.</p>
 <h2 id="architecture-ideation">How I defined the architecture and capabilities</h2>
-<p>I explored how one workspace could support the full content lifecycle, from investigating a service problem to measuring what changed after release. The sketches and capability catalogue below describe that wider product concept. The working council system is documented in <a href="#architecture-and-decisions">Architecture and design decisions</a>.</p>
+<p>I explored how one workspace could support the full content lifecycle, from investigating a service problem to measuring what changed after release. The sketches and capability catalogue below describe that wider product concept. The working council system is documented in <a href="#architecture-and-decisions">Architecture and design decisions</a>. See <a href="#cost-and-team-rollout">the cost and rollout plan</a> for how I scoped a first team workflow.</p>
 
 <h3>What projects share</h3>
 <p>I designed the shared core around project context, approved standards, evidence, decisions, quality checks and reporting. A form redesign and a website audit can follow different workflows while using the same rules for recording findings and routing work for review. Each project keeps its own files and decisions, with approved outputs shared where needed.</p>
@@ -95,7 +95,23 @@
   <h4 id="os-worked-example">Worked example in the product concept</h4>
   <p>If a housing support form shows eligibility late, the workbench could record the page and supporting evidence, flag wasted effort as a hypothesis, and suggest testing an earlier check. A service owner verifies the eligibility rule. The designer can then carry the verified rule into the form specification and its test cases, and measure whether fewer applicants abandon the form after release. If the eligibility rule changes, the concept calls for the system to flag the affected questions, validation rules and tests for review.</p>
 </aside>
-<p>For the broader product, the blueprint proposed starting with a Content Freshness Monitor. It would take a page inventory, flag potential issues with evidence, and route findings to an owner for resolution. Confirmed issues, false positives and time to review would help decide whether to extend the workflow to other workbenches. The working audit and its human approval step illustrate how those principles apply in the council system.</p>
+<h3 id="cost-and-team-rollout" class="evidence-anchor">Designing for cost and team rollout</h3>
+<p>I used the Content Freshness Monitor to explore how a team could adopt the OS in stages. I compared sending every page to a model with a rules-based scan that could add model analysis when a finding actually needed interpretation. The decision was about which checks justified a model call. The editor used to write the scanner has no bearing on API charges.</p>
+<div class="os-sketches">
+  <div>
+    <ol>
+      <li><strong>Start with a local scan.</strong> Read an Excel page inventory, use Python to check dates, links and known outdated phrases, and write a report with the source URL, flagged passage and reason. This version needs no model API calls.</li>
+      <li><strong>Share the review workflow.</strong> Route approved findings through a shared folder and notify reviewers through Power Automate. Colleagues could review and resolve findings in Excel or a SharePoint list using the tools they already work in.</li>
+      <li><strong>Add model analysis selectively.</strong> Compare each scan with the last one and route new or materially changed findings for model review when a rule cannot resolve them. Keep a human review step for consequential findings.</li>
+    </ol>
+  </div>
+  <figure>
+    <img src="assets/cdos-concept-freshness-workflow.webp" width="882" height="928" loading="lazy" alt="Workflow sketch linking rules and content checks to an evidence report with source, priority and review status, then delivery via Excel, SharePoint or Power Automate.">
+    <figcaption><strong>Freshness Monitor workflow sketch.</strong> Separate the scan, the evidence record and how colleagues receive findings.</figcaption>
+  </figure>
+</div>
+<p>The <a href="#implementation-evidence">working audit</a> already demonstrates the file handoff: a reviewer moves an approved report into a watched folder and the notification flow sends it. For a wider rollout, the plan would need an approved place to run scheduled scans, a named owner, and confirmation that the chosen connectors are covered by the team’s licences.</p>
+<p>I would test the wider workflow against a manual baseline. The measures are cost per verified useful finding, reviewer time, false positives and important changes the scan missed. Those measures would guide whether to add model calls and expand the rollout.</p>
 
 <span id="decisions" class="evidence-anchor" aria-hidden="true"></span><h2 id="architecture-and-decisions">Architecture and design decisions</h2>
 <h3>1. Thin agents, shared standards</h3>
