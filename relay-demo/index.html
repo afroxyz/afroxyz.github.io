@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay · Disrupted connection wireframe</title>
+<style>
+  :root { font: 17px/1.5 system-ui, sans-serif; color: #172621; background: #edf1ed; }
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  header { background: #172621; color: white; }
+  header div, main, aside { max-width: 38rem; margin: auto; padding: 1rem 1.25rem; }
+  header strong { font-size: 1.4rem; }
+  header small { margin-left: .75rem; }
+  main { min-height: 22rem; background: #fff; padding-bottom: 2rem; }
+  h1 { font-size: clamp(1.6rem, 5vw, 2.25rem); line-height: 1.15; }
+  h2 { font-size: 1.2rem; margin-top: 0; }
+  article { background: #f4f6f4; border: 1px solid #9ba8a0; border-radius: .5rem; padding: 1rem; margin: 1rem 0; }
+  .notice { background: #fff4d8; border-color: #9b7321; }
+  button, select { font: inherit; min-height: 44px; padding: .45rem .75rem; }
+  button { background: #fff; color: inherit; border: 1px solid #172621; border-radius: .3rem; margin: .2rem .5rem .2rem 0; cursor: pointer; text-align: left; }
+  button.primary { background: #203f33; color: white; }
+  :focus-visible { outline: 3px solid #2259ae; outline-offset: 3px; }
+  aside { font-size: .9rem; }
+  select { max-width: 100%; }
+</style>
+<header><div><strong>Relay</strong><small>Synthetic journey demo</small></div></header>
+<main id="screen"></main>
+<aside aria-label="Prototype controls">
+  <p><a href="../work.html#relay-title">Back to portfolio work</a></p>
+  <label for="scenario">Demo scenario</label>
+  <select id="scenario">
+    <option value="eligible">Verified alternative</option>
+    <option value="assistance">Assistance unknown</option>
+    <option value="stale">Status unavailable</option>
+    <option value="changed">Option changes at confirmation</option>
+    <option value="failure">Support request fails, then retries</option>
+    <option value="pending">Support request pending, then verified</option>
+  </select>
+</aside>
+<script type="module" src="./wireframe.mjs"></script>
+</html>
