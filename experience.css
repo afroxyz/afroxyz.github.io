@@ -246,3 +246,34 @@ nav a.is-current{color:var(--accent)}
   text-underline-offset: .18em;
   white-space: nowrap;
 }
+
+.relay-home {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding-block: clamp(2rem, 5vw, 4rem);
+  margin-block: 1rem 3rem;
+}
+.relay-home-copy h2 {
+  margin: .25rem 0 .8rem;
+  font: 500 clamp(3.25rem, 7vw, 6.25rem)/.93 Newsreader, Georgia, serif;
+  letter-spacing: -.055em;
+}
+.relay-home-copy > p:not(.eyebrow) { max-width: 41ch; }
+.relay-home-links { display: flex; align-items: flex-start; flex-wrap: wrap; gap: .8rem 1.4rem; margin-top: 1.4rem; }
+.relay-home-figure {
+  display: grid;
+  justify-items: center;
+  gap: .7rem;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: 1.5rem;
+  background: #ede4f2;
+  color: #503c5e;
+}
+.relay-home-figure img { display: block; width: min(100%, 16rem); height: auto; border-radius: 1rem; box-shadow: 0 10px 24px #2b1d4233; }
+.relay-home-figure figcaption { font-size: .83rem; text-align: center; }
+@media (max-width: 700px) {
+  .relay-home { grid-template-columns: minmax(0, 1fr); }
+}
