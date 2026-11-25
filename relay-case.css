@@ -35,3 +35,10 @@
 @media (max-width: 760px) {
   .relay-case-hero, .relay-case-story, .relay-case-screens { grid-template-columns: minmax(0, 1fr); }
 }
+.relay-case-story > div > .eyebrow, .relay-case-walkthrough > .eyebrow { margin: 0 0 .6rem; }
+.relay-case-story h3 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); line-height: 1.15; }
+.relay-case-frame { display: inline-block; margin-top: .9rem; color: #49305e; }
+.relay-case-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); gap: .8rem; margin: 0 0 1rem; }
+.relay-case-metrics div { background: #eee5f2; color: #2a1e32; padding: 1rem; border-radius: .8rem; }
+.relay-case-metrics dt { font-size: 1.55rem; font-weight: 700; }
+.relay-case-metrics dd { margin: .3rem 0 0; font-size: .94rem; }
