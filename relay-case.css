@@ -1,0 +1,37 @@
+.relay-case main { padding-block: clamp(2rem, 5vw, 4rem) 5rem; }
+.relay-case-hero, .relay-case-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 6vw, 6rem);
+}
+.relay-case-hero { align-items: end; padding-block: clamp(2rem, 6vw, 5rem); }
+.relay-case-hero h1 {
+  font: 500 clamp(3.35rem, 8vw, 7rem)/.91 Newsreader, Georgia, serif;
+  letter-spacing: -.055em;
+  margin: .35rem 0 1rem;
+}
+.relay-case-hero h1 em { font-weight: 400; }
+.relay-case-lede { font-size: clamp(1.05rem, 2vw, 1.3rem); max-width: 38ch; }
+.relay-case-meta {
+  margin: 0;
+  border-radius: 1rem;
+  background: #eee5f2;
+  color: #2a1e32;
+  padding: clamp(1rem, 4vw, 2rem);
+}
+.relay-case-meta div + div { border-top: 1px solid #d3c3dd; margin-top: .9rem; padding-top: .9rem; }
+.relay-case-meta dt { font-size: .85rem; font-weight: 700; }
+.relay-case-meta dd { margin: .2rem 0 0; }
+.relay-case-story { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); }
+.relay-case-story, .relay-case-walkthrough { border-top: 1px solid currentColor; padding-block: clamp(1.65rem, 4vw, 3.5rem); }
+.relay-case h2 { margin: 0; font: 500 clamp(2rem, 4vw, 3.25rem)/1.04 Newsreader, Georgia, serif; letter-spacing: -.04em; }
+.relay-case-story p:first-child { margin-top: 0; }
+.relay-case-links { display: flex; flex-wrap: wrap; gap: .8rem 1.25rem; }
+.relay-case-screens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 3vw, 2rem); margin-top: 1.5rem; }
+.relay-case-screens figure { background: #eee5f2; color: #2a1e32; border-radius: 1.1rem; margin: 0; padding: clamp(.9rem, 2.2vw, 1.5rem); }
+.relay-case-screens img { display: block; width: 100%; max-width: 17rem; height: auto; margin-inline: auto; border-radius: .65rem; box-shadow: 0 8px 26px #39224429; }
+.relay-case-screens h3 { margin: 1.15rem 0 .4rem; line-height: 1.2; }
+.relay-case-screens p { margin: 0; }
+@media (max-width: 760px) {
+  .relay-case-hero, .relay-case-story, .relay-case-screens { grid-template-columns: minmax(0, 1fr); }
+}

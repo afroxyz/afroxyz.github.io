@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-GB" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relay · Designing for a missed rail connection | Chika Nwakanma</title>
+  <meta name="description" content="A service and content design case study on helping rail passengers choose a safe next step when a delay puts their connection at risk.">
+  <meta property="og:title" content="Relay · Designing for a missed rail connection">
+  <meta property="og:description" content="Service design, content decisions and an interactive rail disruption journey.">
+  <meta property="og:image" content="https://afroxyz.github.io/assets/relay/options.webp">
+  <meta property="og:url" content="https://afroxyz.github.io/relay.html">
+  <link rel="canonical" href="https://afroxyz.github.io/relay.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('chika-theme')||'light'}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="experience.css?v=practice-20261122">
+  <link rel="stylesheet" href="relay-case.css">
+  <script src="portfolio.js" defer></script>
+</head>
+<body class="relay-case">
+<a class="skip" href="#main">Skip to content</a>
+<div class="header-shell"><header class="site wrap"><a class="brand" href="index.html" aria-label="Chika Nwakanma, home"><span class="monogram" aria-hidden="true">cn.</span><span>Chika Nwakanma</span></a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+<nav id="main-nav" aria-label="Main"><ul><li><a href="work.html">Work</a></li><li><a href="index.html#services">How I can help</a></li><li><a href="index.html#playground">Playground</a></li><li><a href="index.html#about">About</a></li><li><a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a></li></ul></nav>
+<button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch colour theme" hidden><span aria-hidden="true">☼</span></button></header></div>
+
+<main id="main" class="wrap">
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li aria-current="page">Relay</li></ol></nav>
+
+  <section class="relay-case-hero" aria-labelledby="relay-title">
+    <div>
+      <p class="eyebrow">Relay · Independent rail service design</p>
+      <h1 id="relay-title">Designing for a <em>missed connection.</em></h1>
+      <p class="relay-case-lede">A late train leaves passengers with an immediate decision. Which service can they take with the ticket they already have, and what happens if they need help changing trains?</p>
+      <a class="btn primary" href="relay-demo/">Try the interactive journey <span aria-hidden="true">↗</span></a>
+    </div>
+    <dl class="relay-case-meta">
+      <div><dt>My role</dt><dd>Content, service and conversation design</dd></div>
+      <div><dt>My contribution</dt><dd>Journey mapping, service rules, mobile flows, recovery content and evaluation criteria</dd></div>
+      <div><dt>Project scope</dt><dd>Independent concept using fictional journeys and fares</dd></div>
+    </dl>
+  </section>
+
+  <section class="relay-case-story" aria-labelledby="scope">
+    <h2 id="scope">Make the next decision clear</h2>
+    <div>
+      <p>I scoped the working journey around one passenger changing at Alder Junction. The first train is expected at 10:08. The onward train is scheduled to leave at 10:00. The passenger needs to know what this means for their journey before comparing alternatives.</p>
+      <p>I mapped booking through follow-up and traced the handoffs in a service blueprint. The emotional map treats anxiety at disruption and relief on finding a viable option as research hypotheses. The blueprint helped me separate three questions that can have different answers: will the connection be missed, is the ticket accepted on another service, and is transfer assistance available?</p>
+    </div>
+  </section>
+
+  <section class="relay-case-walkthrough" aria-labelledby="walkthrough">
+    <h2 id="walkthrough">From disruption to a next step</h2>
+    <div class="relay-case-screens">
+      <figure>
+        <img src="assets/relay/alert.webp" width="780" height="1240" loading="lazy" alt="A connection alert says the passenger is expected to miss the 10:00 train and gives a 10:08 expected arrival.">
+        <figcaption><h3>Lead with the impact</h3><p>The alert names the train the passenger is expected to miss. The arrival estimate and last-checked time explain why Relay is showing it.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/relay/options.webp" width="780" height="1240" loading="lazy" alt="Travel options lists a 10:30 train that accepts the ticket and a 10:45 train with unknown ticket acceptance.">
+        <figcaption><h3>Put eligibility beside the train</h3><p>Passengers can compare the 10:30 and 10:45 in one place. If assistance is unconfirmed, the screen preserves the ticket decision and offers help with that specific service.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="assets/relay/support.webp" width="780" height="1240" loading="lazy" alt="The Request received screen shows case reference RL-042 and explains where to find it again.">
+        <figcaption><h3>Show what happened to the request</h3><p>A review screen explains what will be shared before the passenger sends it. Pending and failed requests have their own states. The reference appears after the request succeeds in the prototype.</p></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="relay-case-story" aria-labelledby="conversation">
+    <h2 id="conversation">Give conversation a defined role</h2>
+    <div>
+      <p>Passengers can check the ticket and resolve disruption through screens. Conversation is designed for follow-up questions and exceptions. The service owns ticket and assistance decisions, and the passenger confirms any consequential action.</p>
+      <p>The existing Dialogflow CX export gave the same delay answer regardless of the journey entered. I used that finding to shape a webhook-backed design with an explicit unavailable state. A local mock returns separate ticket and assistance decisions for the same scenario.</p>
+    </div>
+  </section>
+
+  <section class="relay-case-story" aria-labelledby="evidence">
+    <h2 id="evidence">What I verified</h2>
+    <div>
+      <p>Six scripted interaction checks passed across the web flow, including a changed option, unconfirmed assistance and a failed request followed by a retry. Four local HTTP checks covered the webhook response, unavailable status, session isolation and an unsupported action.</p>
+      <p>These checks verify behaviour under predefined conditions. Passenger usability testing and Dialogflow CX sandbox validation are pending. The most important usability question is whether passengers can choose a ticket-valid train and explain what remains uncertain without prompting.</p>
+      <p class="relay-case-links"><a class="text-link" href="relay-demo/">Try the interactive journey ↗</a> <a class="text-link" href="https://www.figma.com/design/jEi1IY3DHHFM6j5V9sFEia">View the Figma flow map ↗</a></p>
+    </div>
+  </section>
+</main>
+<footer class="site"><div class="wrap footer-inner"><div><a class="brand" href="index.html">Chika Nwakanma<span class="accent-dot">.</span></a><p>Complex digital services, content systems and intelligent experiences.</p></div><div class="footer-links"><a href="mailto:chikasco@gmail.com">Email ↗</a><a href="https://www.linkedin.com/in/chika-nwakanma/">LinkedIn ↗</a><a href="https://github.com/afroxyz">GitHub ↗</a></div><p class="copyright">© 2026 · Independent portfolio. Views my own.</p></div></footer>
+</body>
+</html>
